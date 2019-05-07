@@ -17,22 +17,24 @@ class MediaCard extends Component {
     const paragraph = (
       <p className="card__content">{this.props.content}</p>
     );
-    //  
-    let classHeart;
-    const likes = this.props.likes;
-    if(likes > 0) {
-      classHeart = 'fas fa-heart card__heart';
-    } else {
-      classHeart = 'far fa-heart card__heart '
-    }
 
+    const likes = this.props.likes;
+    
+    /*if(likes > 0) {
+      classHeart += 'fas';
+    } else {
+      classHeart += 'far '
+    }*/
+
+    // let classHeart = 'fa-heart card__heart ' ;
+    // classHeart += likes > 0 ? 'fas' : 'far ';
 
     const likesEl = (
       <div className="wrapper__info">
           <a href="/" className="card__link">Saber más...</a>
           <div className="wrapper__likes">
               <p className="card__likes">{likes}</p>
-              <i className={classHeart}></i>
+              <i className={`fa-heart card__heart ${likes > 0 ? 'fas' : 'far '}`}></i>
           </div>
       </div>
     );
